@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golf Genie</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.JS"></script>
+</head>
+<body>
+    <!--Main header for the website-->
+    <h1>Golf Genie</h1>
+
+    <!--Paragraph explaining what the site is for-->
+    <p>Welcome to Golf Genie! Please complete the five questions below to get your perfect clubs!</p>
+
+    <!--Header for the first question-->
+    <h3>Question 1: What is your preffered brand of golf clubs?</h3>
+
+    <h3>Please click all submit buttons in order before hitting the last button!</h3>
+
+    <!--First question options.-->
+    <form>
+        <input type="radio" id="club1" name="club" value="1">
+        <label for="club1"> Titleist Clubs</label><br>
+        <input type="radio" id="club2" name="club" value="2">
+        <label for="club2"> Callaway Clubs</label><br>
+        <input type="radio" id="club3" name="club" value="3">
+        <label for="club3"> Taylormade Clubs</label><br>
+        <input type="radio" id="club4" name="club" value="4">
+        <label for="club4"> Mizuno Clubs</label><br>
+        <input type = "button" id = "clubBrand">
+        <label for="clubBrand">Submit</label>
+    </form>
+
+    <!--Header for the second question-->
+    <h3>Question 2: What are you looking for in your irons?</h3>
+
+    <!--Second question options-->
+    <form>
+        <input type="radio" id="Iron1" name="Iron" value="1">
+        <label for="Iron1"> Forgiveness</label><br>
+        <input type="radio" id="Iron2" name="Iron" value="2">
+        <label for="Iron2"> Workability</label><br>
+        <input type="radio" id="Iron3" name="Iron" value="3">
+        <label for="Iron3"> Feel</label><br>
+        <input type="radio" id="Iron4" name="Iron" value="4">
+        <label for="Iron4"> Ball shaping</label><br>
+        <input type = "button" id = "Irons">
+        <label for="Irons">Submit</label>
+    </form>
+
+    <!--Header for the third question-->
+    <h3>Question 3: What kind of irons do you want to play?</h3>
+
+    <!--Third question options-->
+    <form>
+        <input type="radio" id="TOI1" name="Type" value="1">
+        <label for="TOI1"> Bladed Irons</label><br>
+        <input type="radio" id="TOI2" name="Type" value="2">
+        <label for="TOI2"> Players Irons</label><br>
+        <input type="radio" id="TOI3" name="Type" value="3">
+        <label for="TOI3"> Distance Irons</label><br>
+        <input type="radio" id="TOI4" name="Type" value="4">
+        <label for="TOI4"> Beginner Irons</label><br>
+        <input type = "button" id = "typeOfIrons">
+        <label for="typeOfIrons">Submit</label>
+    </form>
+
+    <!--Header for the fourth question-->
+    <h3>Question 4: What is your handicap?</h3>
+
+    <!--Fourth question options-->
+    <form>
+        <input type="radio" id="scratch" name="Handicap" value="1">
+        <label for="scratch"> Scratch</label><br>
+        <input type="radio" id="0" name="Handicap" value="2">
+        <label for="0"> 0-7</label><br>
+        <input type="radio" id="8" name="Handicap" value="3">
+        <label for="8"> 8-15</label><br>
+        <input type="radio" id="15" name="Handicap" value="4">
+        <label for="15"> 15+</label><br>
+        <input type = "button" id = "handicap">
+        <label for="handicap">Submit</label>
+    </form>
+
+    <input type = "submit" onclick = "diplayClubs()" value ="submit" id ="submit">
+   
+
+    <script>
+        //Created an array to hold the selected values from the forms.
+        var arr = [];
+
+        //Getting the users selection from the form using an event listener
+        document.getElementById("clubBrand").addEventListener("click", function clubBrand() {
+            //Create a variable that holds the users selection
+            var cbChecked = document.forms[0]["club"].value
+            //if the users selection is not equal to null then push the value into the array
+            if (cbChecked != null) {
+                arr.push(cbChecked)
+            };
+            console.log(arr)
+        })
+
+        //Getting the users selection from the form using an event listener
+        document.getElementById("Irons").addEventListener("click", function irons() {
+            //Create a variable that holds the users selection
+            var ironChecked = document.forms[1]["Iron"].value;
+            //if the users selection is not equal to null then push the value into the array
+            if (ironChecked != null) {
+                arr.push(ironChecked)
+            }
+            console.log(arr)
+        })
+
+        //Getting the users selection from the form using an event listener
+        document.getElementById("typeOfIrons").addEventListener("click", function typeOfIrons() {
+            //Create a variable that holds the users selection
+            var typeChecked = document.forms[2]["Type"].value;
+            //if the users selection is not equal to null then push the value into the array
+            if (typeChecked != null) {
+                arr.push(typeChecked)
+            }
+            console.log(arr)
+        })
+
+        //Getting the users selection from the form using an event listener
+        document.getElementById("handicap").addEventListener("click", function handicap() {
+            //Create a variable that holds the users selection
+            var handicapChecked = document.forms[3]["Handicap"].value;
+            //if the users selection is not equal to null then push the value into the array
+            if (handicapChecked != null) {
+                arr.push(handicapChecked)
+            }
+            //Logging the array to the console to see the function is working
+            console.log(arr)
+        })
+
+        
+        
+    </script>
+
+
+
+</body>
+</html>
